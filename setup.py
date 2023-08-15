@@ -1,15 +1,59 @@
-# This source code is licensed under the license found in the
-# LICENSE file in the root directory of this source tree.
+#!/usr/bin/env python
 
-from setuptools import find_packages, setup
+"""The setup script."""
+
+import io
+from os import path as op
+from setuptools import setup, find_packages
+
+with open("README.md") as readme_file:
+    readme = readme_file.read()
+
+here = op.abspath(op.dirname(__file__))
+
+# get the dependencies and installs
+with io.open(op.join(here, "requirements.txt"), encoding="utf-8") as f:
+    all_reqs = f.read().split("\n")
+
+install_requires = [x.strip() for x in all_reqs if "git+" not in x]
+dependency_links = [x.strip().replace("git+", "") for x in all_reqs if "git+" not in x]
+
+extras_requires = {}
+
+
+requirements = []
+
+setup_requirements = []
+
+test_requirements = []
 
 setup(
-    name="fastsam",
+    author="Qiusheng Wu",
+    author_email="giswqs@gmail.com",
+    python_requires=">=3.8",
+    classifiers=[
+        "Intended Audience :: Developers",
+        "License :: OSI Approved :: MIT License",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+    ],
+    description="Fast Segment Anything",
+    install_requires=install_requires,
+    extras_require=extras_requires,
+    dependency_links=dependency_links,
+    license="MIT license",
+    long_description=readme,
+    long_description_content_type="text/markdown",
+    include_package_data=True,
+    keywords="segment-anything",
+    name="fast-sam",
     version="0.1.1",
-    install_requires=[],
-    package_dir= {
-        "fastsam": "fastsam",
-        "fastsam_tools": "utils",
-    },
-    url="https://github.com/CASIA-IVA-Lab/FastSAM",
+    packages=find_packages(include=["fastsam", "fastsam.*"]),
+    setup_requires=setup_requirements,
+    url="https://github.com/opengeos/FastSAM",
+    zip_safe=False,
 )
