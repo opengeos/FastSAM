@@ -33,7 +33,7 @@ setup(
     python_requires=">=3.8",
     classifiers=[
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: MIT License",
+        "License :: OSI Approved :: Apache Software License",
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
@@ -45,7 +45,7 @@ setup(
     install_requires=install_requires,
     extras_require=extras_requires,
     dependency_links=dependency_links,
-    license="MIT license",
+    license="Apache Software License",
     long_description=readme,
     long_description_content_type="text/markdown",
     include_package_data=True,
