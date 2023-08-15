@@ -50,7 +50,7 @@ setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     keywords="segment-anything",
-    name="fast-sam",
+    name="segment-anything-fast",
     version="0.1.1",
     packages=find_packages(include=["fastsam", "fastsam.*"]),
     setup_requires=setup_requirements,
