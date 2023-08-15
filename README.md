@@ -2,6 +2,8 @@
 
 # Fast Segment Anything
 
+[![image](https://img.shields.io/pypi/v/segment-anything-fast.svg)](https://pypi.python.org/pypi/segment-anything-fast)
+
 [[`📕Paper`](https://arxiv.org/pdf/2306.12156.pdf)] [[`🤗HuggingFace Demo`](https://huggingface.co/spaces/An-619/FastSAM)] [[`Colab demo`](https://colab.research.google.com/drive/1oX14f6IneGGw612WgVlAiy91UHwFAvr9?usp=sharing)] [[`Replicate demo & API`](https://replicate.com/casia-iva-lab/fastsam)] [[`Model Zoo`](#model-checkpoints)] [[`BibTeX`](#citing-fastsam)]
 
 ![FastSAM Speed](assets/head_fig.png)
@@ -12,6 +14,7 @@ the SAM method at **50× higher run-time speed**.
 ![FastSAM design](assets/Overview.png)
 
 **🍇 Updates**
+
 - **`2023/07/06`** Added to [Ultralytics (YOLOv8) Model Hub](https://docs.ultralytics.com/models/fast-sam/). Thanks to [Ultralytics](https://github.com/ultralytics/ultralytics) for help 🌹.
 - **`2023/06/29`** Support [text mode](https://huggingface.co/spaces/An-619/FastSAM) in HuggingFace Space. Thanks a lot to [gaoxinge](https://github.com/gaoxinge) for help 🌹.
 - **`2023/06/29`** Release [FastSAM_Awesome_TensorRT](https://github.com/ChuRuaNh0/FastSam_Awsome_TensorRT). Thanks a lot to [ChuRuaNh0](https://github.com/ChuRuaNh0) for providing the TensorRT model of FastSAM 🌹.
@@ -24,27 +27,7 @@ the SAM method at **50× higher run-time speed**.
 Clone the repository locally:
 
 ```shell
-git clone https://github.com/CASIA-IVA-Lab/FastSAM.git
-```
-
-Create the conda env. The code requires `python>=3.7`, as well as `pytorch>=1.7` and `torchvision>=0.8`. Please follow the instructions [here](https://pytorch.org/get-started/locally/) to install both PyTorch and TorchVision dependencies. Installing both PyTorch and TorchVision with CUDA support is strongly recommended.
-
-```shell
-conda create -n FastSAM python=3.9
-conda activate FastSAM
-```
-
-Install the packages:
-
-```shell
-cd FastSAM
-pip install -r requirements.txt
-```
-
-Install CLIP:
-
-```shell
-pip install git+https://github.com/openai/CLIP.git
+pip install segment-anything-fast
 ```
 
 ## <a name="GettingStarted"></a> Getting Started
@@ -74,6 +57,7 @@ python Inference.py --model_path ./weights/FastSAM.pt --img_path ./images/dogs.j
 ```
 
 You can use the following code to generate all masks, make mask selection based on prompts, and visualize the results.
+
 ```shell
 from fastsam import FastSAM, FastSAMPrompt
 
@@ -171,11 +155,11 @@ Test on the BSDB500 dataset.
 ##### COCO
 
 |  method   | AR10 | AR100 | AR1000 | AUC  |
-| :-------: | :--: | :---: | :-----: | :--: |
-| SAM-H E64 | 15.5 | 45.6  |   67.7 | 32.1 |
-| SAM-H E32 | 18.5 | 49.5  |   62.5 | 33.7 |
-| SAM-B E32 | 11.4 | 39.6  |   59.1 | 27.3 |
-|  FastSAM  | 15.7 | 47.3  |   63.7 | 32.2 |
+| :-------: | :--: | :---: | :----: | :--: |
+| SAM-H E64 | 15.5 | 45.6  |  67.7  | 32.1 |
+| SAM-H E32 | 18.5 | 49.5  |  62.5  | 33.7 |
+| SAM-B E32 | 11.4 | 39.6  |  59.1  | 27.3 |
+|  FastSAM  | 15.7 | 47.3  |  63.7  | 32.2 |
 
 ##### LVIS
 
@@ -240,11 +224,9 @@ The model is licensed under the [Apache 2.0 license](LICENSE).
 
 Our project wouldn't be possible without the contributions of these amazing people! Thank you all for making this project better.
 
-
 <a href="https://github.com/CASIA-IVA-Lab/FastSAM/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=CASIA-IVA-Lab/FastSAM" />
 </a>
-
 
 ## Citing FastSAM
 
