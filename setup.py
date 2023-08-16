@@ -51,7 +51,7 @@ setup(
     include_package_data=True,
     keywords="segment-anything",
     name="segment-anything-fast",
-    version="0.1.1",
+    version="0.1.2",
     packages=find_packages(include=["fastsam", "fastsam.*"]),
     setup_requires=setup_requirements,
     url="https://github.com/opengeos/FastSAM",
