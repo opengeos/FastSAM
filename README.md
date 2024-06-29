@@ -36,7 +36,7 @@ poetry install
 pip install segment-anything-fast
 ```
 [!NOTE]
-If you encounter the error;
+If you encounter below error when running inference;
 ```
 ImportError: cannot import name 'packaging' from 'pkg_resources'
 ```
