@@ -26,9 +26,27 @@ the SAM method at **50× higher run-time speed**.
 
 Clone the repository locally:
 
+### option a: poetry (recommended)
+```shell
+poetry install
+```
+
+### option b: pip
 ```shell
 pip install segment-anything-fast
 ```
+[!NOTE]
+If you encounter below error when running inference;
+```
+ImportError: cannot import name 'packaging' from 'pkg_resources'
+```
+It is because the openai-clip version is deprecated.
+The fix is already merged by [this PR](https://github.com/openai/CLIP/issues/446).
+So you need to update openai-clip by below command;
+```shell
+pip install git+https://github.com/openai/CLIP.git
+```
+
 
 ## <a name="GettingStarted"></a> Getting Started
 
