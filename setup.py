@@ -33,7 +33,7 @@ setup(
     python_requires=">=3.8",
     classifiers=[
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: Apache Software License",
+        "License :: OSI Approved :: GNU Affero General Public License v3",
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
@@ -45,7 +45,8 @@ setup(
     install_requires=install_requires,
     extras_require=extras_requires,
     dependency_links=dependency_links,
-    license="Apache Software License",
+    license="AGPL-3.0-only AND Apache-2.0",
+    license_files=["LICENSE", "LICENSE-AGPL-3.0.txt", "NOTICE"],
     long_description=readme,
     long_description_content_type="text/markdown",
     include_package_data=True,

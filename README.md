@@ -211,7 +211,10 @@ The results of several downstream tasks to show the effectiveness.
 
 ## License
 
-The model is licensed under the [Apache 2.0 license](LICENSE).
+This distribution includes code under both the [GNU AGPL v3](LICENSE-AGPL-3.0.txt)
+and the [Apache License 2.0](LICENSE). It is not Apache-only.
+See [NOTICE](NOTICE) for the source projects and file-level notices.
+Model checkpoints are downloaded separately; consult their publishers for their terms.
 
 ## Acknowledgement
 

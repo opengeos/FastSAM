@@ -1,4 +1,6 @@
 include LICENSE
+include LICENSE-AGPL-3.0.txt
+include NOTICE
 include README.md
 include requirements.txt
 

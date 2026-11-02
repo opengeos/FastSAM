@@ -1,0 +1,17 @@
+FastSAM / segment-anything-fast
+
+This package is based on CASIA-IVA-Lab/FastSAM.
+Copyright 2023 | CASIA-IVA-Lab
+https://github.com/CASIA-IVA-Lab/FastSAM
+
+The original Apache License 2.0 text and copyright notice are retained
+in LICENSE. The distribution also contains Ultralytics-derived files:
+fastsam/__init__.py and fastsam/model.py carry AGPL-3.0 notices.
+Those notices remain in the source; LICENSE-AGPL-3.0.txt supplies the
+GNU Affero General Public License version 3 text.
+
+CASIA-IVA-Lab/FastSAM updated its license to AGPL-3.0 in commit
+279ceab2b656801917fd2d84e182a80f5d20bf8a (2023-11-07).
+This packaging change corrects the Apache-only description and includes
+both license texts. It does not grant new permissions for third-party
+code or separately downloaded model checkpoints.
