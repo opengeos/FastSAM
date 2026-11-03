@@ -50,7 +50,7 @@ class SamGeo(FastSAM):
             print(f"Downloading {model} to {model_path}...")
             download_file(models[model], model_path)
 
-        super().__init__(model, **kwargs)
+        super().__init__(model_path, **kwargs)
 
     def set_image(self, image, device=None, **kwargs):
         """Set the input image.
@@ -236,7 +236,9 @@ class SamGeo(FastSAM):
         target_height = image.shape[0]
         target_width = image.shape[1]
         annotations = self.annotations
-        annotation = np.array(annotations.cpu())
+        annotation = np.asarray(
+            annotations.cpu() if isinstance(annotations, torch.Tensor) else annotations
+        )
 
         mask_sum = annotation.shape[0]
         height = annotation.shape[1]

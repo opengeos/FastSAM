@@ -64,7 +64,7 @@ as well to remove the old adapted wrapper from an existing environment.
 
 The two checkpoint download URLs and segmentation implementation are unchanged.
 No checkpoint binaries are bundled. Retaining a download link does not resolve
-the conflicting historical model-license record; see [NOTICE](NOTICE).
+the conflicting historical model-license record; see [NOTICE](https://github.com/opengeos/FastSAM/blob/main/NOTICE).
 
 ## <a name="GettingStarted"></a> Getting Started
 
@@ -248,8 +248,8 @@ The results of several downstream tasks to show the effectiveness.
 ## License
 
 This distribution contains **AGPL-covered code**; it is not Apache-only.
-See the [GNU AGPL v3](LICENSE), retained [Apache-2.0](LICENSE-APACHE-2.0.txt)
-and [SamGeo MIT](LICENSE-SAMGEO-MIT.txt) texts, and [NOTICE](NOTICE) for provenance.
+See the [GNU AGPL v3](https://github.com/opengeos/FastSAM/blob/main/LICENSE), retained [Apache-2.0](https://github.com/opengeos/FastSAM/blob/main/LICENSE-APACHE-2.0.txt)
+and [SamGeo MIT](https://github.com/opengeos/FastSAM/blob/main/LICENSE-SAMGEO-MIT.txt) texts, and [NOTICE](https://github.com/opengeos/FastSAM/blob/main/NOTICE) for provenance.
 Original permissive notices remain applicable to their respective contributions.
 Model checkpoints are separate downloads. Historical Apache model statements
 conflict with the original project's AGPL correction; this code packaging change

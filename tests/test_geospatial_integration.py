@@ -61,6 +61,18 @@ class TestGeospatialIntegration(unittest.TestCase):
         self.image.touch()
         self.model.set_image(str(self.image), device="cpu")
 
+    def test_model_uses_cached_checkpoint_path(self):
+        self.assertEqual(self.model.model, str(Path(self.temp.name, "FastSAM-s.pt")))
+        self.common.download_file.assert_not_called()
+
+    def test_overlay_accepts_numpy_and_tensor_masks(self):
+        torch = importlib.import_module("torch")
+        expected = np.broadcast_to([30 / 255, 144 / 255, 1.0, 0.6], (12, 12, 4))
+        for annotations in (self.mask, torch.from_numpy(self.mask)):
+            with self.subTest(type=type(annotations).__name__):
+                self.model.annotations = annotations
+                np.testing.assert_allclose(self.model.fast_show_mask(), expected)
+
     def test_prompt_workflows_keep_their_arguments_and_masks(self):
         self.backend.FastSAMPrompt.assert_called_once_with(
             str(self.image), "model-results", device="cpu"
