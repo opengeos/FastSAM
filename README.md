@@ -30,6 +30,42 @@ Clone the repository locally:
 pip install segment-anything-fast
 ```
 
+## Geospatial integration (AGPL)
+
+Starting with 0.1.3, the geospatial wrapper formerly shipped as
+`samgeo.fast_sam` is included here as `samgeo_fastsam`. It retains the existing
+FastSAM methods and model selection. Python 3.10 or later is required for the
+optional geospatial dependencies.
+
+```shell
+pip install "segment-anything-fast[geo]>=0.1.3"
+```
+
+```python
+from samgeo_fastsam import SamGeo
+
+sam = SamGeo(model="FastSAM-x.pt")
+sam.set_image("image.tif", device="cpu")
+sam.everything_prompt(output="masks.tif")
+# Other existing methods: point_prompt, box_prompt, text_prompt,
+# save_masks, raster_to_vector and show_anns.
+```
+
+Replace `from samgeo.fast_sam import SamGeo` in existing notebooks with the new
+import above. SamGeo's `[fast]` extra and old import are being removed; `[all]`
+and `[extra]` will no longer install FastSAM. There is no forwarding module in
+SamGeo. Serialized objects that refer to the old module path need separate
+migration. The agent CLI's generic `generate`/`predict` interface is not supported
+by this wrapper; use the Python API.
+
+The `geo` extra supports existing SamGeo utilities, including older versions.
+After the corrected SamGeo release is available, upgrade `segment-geospatial`
+as well to remove the old adapted wrapper from an existing environment.
+
+The two checkpoint download URLs and segmentation implementation are unchanged.
+No checkpoint binaries are bundled. Retaining a download link does not resolve
+the conflicting historical model-license record; see [NOTICE](NOTICE).
+
 ## <a name="GettingStarted"></a> Getting Started
 
 First download a [model checkpoint](#model-checkpoints).
@@ -211,10 +247,14 @@ The results of several downstream tasks to show the effectiveness.
 
 ## License
 
-This distribution includes code under both the [GNU AGPL v3](LICENSE-AGPL-3.0.txt)
-and the [Apache License 2.0](LICENSE). It is not Apache-only.
-See [NOTICE](NOTICE) for the source projects and file-level notices.
-Model checkpoints are downloaded separately; consult their publishers for their terms.
+This distribution contains **AGPL-covered code**; it is not Apache-only.
+See the [GNU AGPL v3](LICENSE), retained [Apache-2.0](LICENSE-APACHE-2.0.txt)
+and [SamGeo MIT](LICENSE-SAMGEO-MIT.txt) texts, and [NOTICE](NOTICE) for provenance.
+Original permissive notices remain applicable to their respective contributions.
+Model checkpoints are separate downloads. Historical Apache model statements
+conflict with the original project's AGPL correction; this code packaging change
+provides no new grant over model weights. Review the checkpoint publisher's terms
+before redistribution or deployment.
 
 ## Acknowledgement
 
