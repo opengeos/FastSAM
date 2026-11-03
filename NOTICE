@@ -1,0 +1,30 @@
+FastSAM / segment-anything-fast
+
+This package is based on CASIA-IVA-Lab/FastSAM.
+Copyright 2023 | CASIA-IVA-Lab
+https://github.com/CASIA-IVA-Lab/FastSAM
+
+The original Apache License 2.0 text and copyright notice are retained
+in LICENSE-APACHE-2.0.txt. The distribution contains Ultralytics-derived files:
+fastsam/__init__.py and fastsam/model.py carry AGPL-3.0 notices.
+Those notices remain in the source; LICENSE supplies the
+GNU Affero General Public License version 3 text.
+
+CASIA-IVA-Lab/FastSAM updated its license to AGPL-3.0 in commit
+279ceab2b656801917fd2d84e182a80f5d20bf8a (2023-11-07).
+This distribution is not Apache-only. Original permissive notices remain
+applicable to their respective contributions.
+
+samgeo_fastsam/__init__.py is the geospatial integration moved from
+opengeos/segment-geospatial, samgeo/fast_sam.py at commit
+af19cb7c10e396414150a670218775538a4916d7.
+Copyright (c) 2023, Qiusheng Wu
+The original MIT text is retained in LICENSE-SAMGEO-MIT.txt. The integration
+includes methods adapted from CASIA-IVA-Lab/FastSAM/fastsam/prompt.py, as
+identified by the preserved source docstrings. It is distributed here as
+part of the AGPL-covered FastSAM integration.
+
+Model checkpoints are separate downloads and are not bundled in this
+Python distribution. Historical Apache model statements conflict with the
+AGPL correction and do not establish permissive clearance for the weights.
+This change grants no additional rights over third-party code or models.

@@ -18,7 +18,7 @@ with io.open(op.join(here, "requirements.txt"), encoding="utf-8") as f:
 install_requires = [x.strip() for x in all_reqs if "git+" not in x]
 dependency_links = [x.strip().replace("git+", "") for x in all_reqs if "git+" not in x]
 
-extras_requires = {}
+extras_requires = {"geo": ["segment-geospatial>=1.4.2"]}
 
 
 requirements = []
@@ -33,7 +33,7 @@ setup(
     python_requires=">=3.8",
     classifiers=[
         "Intended Audience :: Developers",
-        "License :: OSI Approved :: Apache Software License",
+        "License :: OSI Approved :: GNU Affero General Public License v3",
         "Natural Language :: English",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.8",
@@ -45,14 +45,22 @@ setup(
     install_requires=install_requires,
     extras_require=extras_requires,
     dependency_links=dependency_links,
-    license="Apache Software License",
+    license="AGPL-3.0-only AND Apache-2.0 AND MIT",
+    license_files=[
+        "LICENSE",
+        "LICENSE-APACHE-2.0.txt",
+        "LICENSE-SAMGEO-MIT.txt",
+        "NOTICE",
+    ],
     long_description=readme,
     long_description_content_type="text/markdown",
     include_package_data=True,
     keywords="segment-anything",
     name="segment-anything-fast",
-    version="0.1.2",
-    packages=find_packages(include=["fastsam", "fastsam.*"]),
+    version="0.1.3",
+    packages=find_packages(
+        include=["fastsam", "fastsam.*", "samgeo_fastsam", "samgeo_fastsam.*"]
+    ),
     setup_requires=setup_requirements,
     url="https://github.com/opengeos/FastSAM",
     zip_safe=False,

@@ -1,7 +1,17 @@
+global-exclude *
+
 include LICENSE
+include LICENSE-APACHE-2.0.txt
+include LICENSE-SAMGEO-MIT.txt
+include NOTICE
 include README.md
 include requirements.txt
+include setup.py
+include MANIFEST.in
+
+recursive-include fastsam *.py
+recursive-include samgeo_fastsam *.py
+recursive-include tests *.py
 
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
-
